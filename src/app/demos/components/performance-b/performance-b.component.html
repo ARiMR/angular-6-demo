@@ -1,0 +1,10 @@
+<mat-list>
+  <mat-list-item>
+    <button mat-stroked-button (click)="addItem()">Add item</button>
+    <button mat-stroked-button (click)="add100Items()">Add 100 items</button>
+  </mat-list-item>
+  <mat-list-item *ngFor="let item of items">
+    <span>{{item.id}} - {{ item.name}} - {{item.color | colorName}}</span>
+  </mat-list-item>
+</mat-list>
+

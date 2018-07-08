@@ -1,0 +1,23 @@
+.even, .odd {
+  padding: 5px 0 5px 5px;
+}
+
+.even {
+  background: white;
+}
+
+.even:hover {
+  background: darken(white, 10%);
+}
+
+.odd {
+  background: lightgray;
+}
+
+.odd:hover {
+  background: darken(lightgray, 10%);
+}
+
+.items {
+  margin: 2em;
+}

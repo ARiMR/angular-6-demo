@@ -1,0 +1,21 @@
+<h1>Control value accessors</h1>
+
+<mat-form-field style="width: 100%; margin-top: 1em;">
+  <input matInput placeholder="pure input" [(ngModel)]="sampleText"/>
+</mat-form-field>
+
+<ng6-simple-input-wrapper [(ngModel)]="sampleText"></ng6-simple-input-wrapper>
+<ng6-simple-input-wrapper [(ngModel)]="sampleText" [disabled]="true"></ng6-simple-input-wrapper>
+
+<hr>
+
+<ng6-complex-editor [(ngModel)]="nestedObject" [disabled]="editorDisabled"></ng6-complex-editor>
+
+<hr>
+<pre>{{nestedObject | json}}</pre>
+<hr>
+
+<button mat-flat-button (click)="toggleEditor()">TOGGLE EDIT</button>
+
+<br>
+<br>

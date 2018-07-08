@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  margin: 1em;
+  width: 600px;
+}

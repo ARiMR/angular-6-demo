@@ -1,0 +1,9 @@
+.menu-buttons {
+  text-align: right;
+  width: 100%;
+}
+
+.menu-buttons::after {
+  content: "";
+  clear: both;
+}

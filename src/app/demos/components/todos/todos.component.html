@@ -1,0 +1,28 @@
+<mat-list>
+  <mat-list-item>
+    <h1>TODOS (<span>{{loading?'LOADING...':todos.length}}</span>)</h1>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-checkbox style="margin-left: 2em" [(ngModel)]="showDone" (ngModelChange)="loadTodos()">
+      show finished todos
+    </mat-checkbox>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-form-field style="width: 100%; margin-top: 1em;">
+      <input matInput placeholder="What do you want to do?" [(ngModel)]="editedTodoTitle"
+             (keypress)="onTodoEditKeypress($event)"/>
+    </mat-form-field>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <ng-template ngFor [ngForOf]="todos" let-todo>
+    <mat-list-item>
+      <button mat-icon-button (click)="deleteTodo(todo)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <mat-checkbox [(ngModel)]="todo.done" (ngModelChange)="toggleTodo($event, todo)">
+        <span [ngClass]="{'striked': todo.done}">{{todo.title}}</span>
+      </mat-checkbox>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </ng-template>
+</mat-list>

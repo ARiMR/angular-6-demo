@@ -1,0 +1,28 @@
+<h1>Using updateOn with validations</h1>
+
+<div *ngIf="form">
+  <form [formGroup]="form" (submit)="onSubmit()">
+
+    <mat-form-field style="width: 100%; margin-top: 1em;">
+      <input matInput placeholder="field_a updateOn: change" formControlName="field_a"/>
+    </mat-form-field>
+    <h4 style="color:red" *ngFor="let err of getFieldErrors('field_a')">{{err}}</h4>
+
+    <mat-form-field style="width: 100%; margin-top: 1em;">
+      <input matInput placeholder="field_b updateOn: blur" formControlName="field_b"/>
+    </mat-form-field>
+    <h4 style="color:red" *ngFor="let err of getFieldErrors('field_b')">{{err}}</h4>
+
+    <mat-form-field style="width: 100%; margin-top: 1em;">
+      <input matInput placeholder="field_c updateOn: submit" formControlName="field_c"/>
+    </mat-form-field>
+    <h4 style="color:red" *ngFor="let err of getFieldErrors('field_c')">{{err}}</h4>
+
+    <button mat-raised-button type="submit">Submit form</button>
+
+  </form>
+
+  <h3>Submitted data:</h3>
+  <pre>{{submittedForm | json}}</pre>
+
+</div>

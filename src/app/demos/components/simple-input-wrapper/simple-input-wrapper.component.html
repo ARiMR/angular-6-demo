@@ -1,0 +1,6 @@
+<mat-form-field style="width: 100%; margin-top: 1em;">
+  <input matInput placeholder="simple input wrapper" [(ngModel)]="model" (ngModelChange)="ngModelChange()"
+         [disabled]="disabled"/>
+</mat-form-field>
+<button mat-stroked-button type="button" (click)="toUpperCase()" [disabled]="disabled">toUpperCase</button>
+<button mat-stroked-button type="button" (click)="toLowerCase()" [disabled]="disabled">toLowerCase</button>

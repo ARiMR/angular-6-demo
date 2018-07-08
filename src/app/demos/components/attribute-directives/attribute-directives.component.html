@@ -1,0 +1,18 @@
+<h1>Attribute directives</h1>
+
+<div ng6Bordered>
+  <h2 ng6Bordered>Bordered text A</h2>
+  <h2 ng6Bordered>Bordered text B</h2>
+  <h2 ng6Bordered>Bordered text C</h2>
+</div>
+
+<mat-slider min="1" max="50" step="1" [(ngModel)]="borderSize" style="width: 100%"></mat-slider>
+<div ng6CustomBorder [borderSizePx]="5">
+  <h2 ng6CustomBorder [borderSizePx]="borderSize">Custom bordered text A</h2>
+  <h2 ng6CustomBorder [borderSizePx]="borderSize">Custom bordered text B</h2>
+  <h2 ng6CustomBorder [borderSizePx]="borderSize">Custom bordered text C</h2>
+</div>
+
+
+<ng6-counter ng6CounterIncrement></ng6-counter>
+<ng6-counter ng6CounterDecrement></ng6-counter>

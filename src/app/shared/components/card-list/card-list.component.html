@@ -1,0 +1,11 @@
+<mat-card *ngFor="let item of items" class="card">
+  <mat-list-item>
+    <mat-card-title>
+      <a *ngIf="item.url" [routerLink]="item.url">{{item.title}}</a>
+      <span *ngIf="!item.url">{{item.title}}</span>
+    </mat-card-title>
+    <mat-card-content *ngIf="item.description">
+      <p [innerHTML]="item.description"></p>
+    </mat-card-content>
+  </mat-list-item>
+</mat-card>

@@ -1,0 +1,36 @@
+<div
+  class="shadow-box ui-shadow-{{nestLevel % 5 + 1 }}"
+  [ngClass]="{'even': nestLevel%2==0,'odd': nestLevel%2==1}"
+  *ngIf="model">
+
+  <div>
+
+    <div style="float: left">
+      <button mat-mini-fab color="primary" [disabled]="disabled" (click)="removeItemClick()" *ngIf="nestLevel">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-mini-fab color="primary" [disabled]="disabled" (click)="addItem()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+    <div style="float: left; margin-left: 1em;">
+      <mat-form-field style="width: 100%; margin-top: 1em;">
+        <input matInput placeholder="item name" [disabled]="disabled" [(ngModel)]="model.name"
+               (ngModelChange)="ngModelChange()"/>
+      </mat-form-field>
+    </div>
+
+    <div style="clear: both;"></div>
+
+
+  </div>
+
+  <div *ngFor="let el of model.items; let i = index" class="items">
+    <ng6-complex-editor [(ngModel)]="model.items[i]"
+                        (change)="ngModelChange()"
+                        [nestLevel]="nestLevel+1"
+                        (removeItem)="deleteItem(i)"
+                        [disabled]="disabled"></ng6-complex-editor>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<h1>Structural directives</h1>
+
+
+<mat-slider min="0" max="10" step="1" [(ngModel)]="count" style="width: 100%"></mat-slider>
+<h2>Current count is {{count}}</h2>
+<h2 *ngIf="count%2===0">Count is even</h2>
+<h2 *ng6IfNot="count%2===0">Count is not even</h2>
+<h2 *ngIf="count%2===1">Count is odd</h2>
+<h2 *ng6IfNot="count%2===1">Count is not odd</h2>
+<h2 *ngIf="count>5">Count is greater than 5</h2>
+<h2 *ng6IfNot="count>5">Count is not greater than 5</h2>
+
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
+  <img *ng6Times="count" src="/assets/angular_logo.svg" alt="Angular logo" style="height: 300px">
+</div>
